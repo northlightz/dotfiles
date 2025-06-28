@@ -238,5 +238,9 @@ input type:keyboard {
 #     }
 # }
 
+exec waybar
+exec waypaper --restore
+exec copyq --start-server
+exec swaync
 
 include /etc/sway/config.d/*
