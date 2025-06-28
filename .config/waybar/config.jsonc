@@ -4,7 +4,7 @@
     "height": 0,
 
     "modules-left": [
-        "niri/workspaces"
+        "sway/workspaces"
     ],
 
     "modules-center": [
@@ -20,7 +20,7 @@
         "pulseaudio"
     ],
 
-    "niri/workspaces": {
+    "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "tooltip": false

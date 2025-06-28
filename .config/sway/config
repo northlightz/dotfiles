@@ -242,5 +242,7 @@ exec waybar
 exec waypaper --restore
 exec copyq --start-server
 exec swaync
+exec nm-applet
+exec blueman-applet
 
 include /etc/sway/config.d/*
