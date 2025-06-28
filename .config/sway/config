@@ -16,7 +16,7 @@ set $mod Mod4
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-set $menu rofi
+set $menu rofi -show combi -combi-modi window#drun#run#emoji -modi combi#emoji
 
 ### Output configuration
 #
@@ -63,7 +63,7 @@ input type:keyboard {
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
-
+ 
 ### Key bindings
 #
 # Basics:
@@ -244,5 +244,9 @@ exec copyq --start-server
 exec swaync
 exec nm-applet
 exec blueman-applet
+
+gaps outer 10
+default_border none
+
 
 include /etc/sway/config.d/*
