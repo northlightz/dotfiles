@@ -246,6 +246,6 @@ exec nm-applet
 exec blueman-applet
 
 gaps outer 10
-
+default_border normal 0
 
 include /etc/sway/config.d/*
