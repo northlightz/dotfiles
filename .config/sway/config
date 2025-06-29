@@ -213,7 +213,7 @@ input type:keyboard {
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with flameshot***
-    bindsym Print exec flameshot
+    bindsym Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/ss-"$(date +"%Y-%m-%d_%H-%M-%S")".png
 
     # playerctl keys because these fucking wm people don't write it in themself
     bindsym XF86AudioPlay exec playerctl play-pause
