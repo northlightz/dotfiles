@@ -1,0 +1,5 @@
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(fido-mode 1)
+(ido-mode 1)
+(put 'upcase-region 'disabled nil)
