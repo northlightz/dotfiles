@@ -6,6 +6,11 @@
 (package-initialize)
 
 (setq make-backup-files nil)
+(setq inhibit-startup-screen t)
+
+(set-frame-parameter nil 'alpha-background 70)
+(add-to-list 'default-frame-alist '(alpha-background . 70))
+(add-to-list 'default-frame-alist '(font . "Iosevka Fixed Medium-12"))
 
 (global-company-mode 1)
 (menu-bar-mode 0)
@@ -15,6 +20,7 @@
 (ido-mode 1)
 (auto-save-mode 0)
 (elcord-mode 1)
+(whitespace-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -34,7 +40,7 @@
      "2082ebeb3b4871bff2d2154f239456fcf165c3de80121f875cd8c7d82bd13803"
      "721d2b696ef2a8b7f8680b0a3735568985660e253f6bd7607cf4683dd6fcb0bd"
      default))
- '(package-selected-packages '(company doric-themes elcord magit transient)))
+ '(package-selected-packages '(comment-tags company doric-themes elcord magit transient)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

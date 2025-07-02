@@ -9,11 +9,10 @@
 @define-color wenge #6E5E6E;
     
 * {
-    font-family: "DM Mono";
+    font-family: "Iosevka";
     font-weight: 400;
     font-size: 14px;
     border-radius: 4px 4px 4px 4px;
-
     margin-top: 2px;
     margin-bottom: 2px;
 }
@@ -28,6 +27,10 @@ toolbar, window#waybar {
 #memory,
 #network,
 #pulseaudio {
+    margin-left: 3px;
+    margin-right: 3px;    
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 
@@ -38,6 +41,8 @@ toolbar, window#waybar {
 #workspaces button {
     all: initial;
     color: @cool-gray;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #workspaces button.focused {
