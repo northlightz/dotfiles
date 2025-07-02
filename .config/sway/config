@@ -14,7 +14,7 @@ set $mod Mod4
 # set $up k
 # set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term kitty --single-instance
 # Your preferred application launcher
 set $menu rofi -show combi -combi-modi window#drun#run#emoji -modi combi#emoji
 

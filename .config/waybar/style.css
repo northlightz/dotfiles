@@ -13,10 +13,13 @@
     font-weight: 400;
     font-size: 14px;
     border-radius: 4px 4px 4px 4px;
+
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 toolbar, window#waybar {
-    background: @black-4;
+    background: rgba(00,00,00,00);
 }
 
 #clock,
@@ -25,19 +28,15 @@ toolbar, window#waybar {
 #memory,
 #network,
 #pulseaudio {
-    margin: 6px 6px 6px 0px;
-    padding: 2px 8px;
 }
 
 
 #workspaces {
     background-color: @space-cadet;
-    margin: 6px 0px 6px 6px;
 }
 
 #workspaces button {
     all: initial;
-    padding: 2px 4px;
     color: @cool-gray;
 }
 
