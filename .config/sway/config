@@ -214,7 +214,8 @@ input type:keyboard {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim & slurl. also second bind for uploading automagically to github (like imgur)
     bindsym Print exec grim -g "$(slurp)" /home/rye/Pictures/Screenshots/ss-"$(date +"%Y-%m-%d_%H-%M-%S")".png
-    bindsym $mod+Print exec grim -g "$(slurp)" /home/rye/Pictures/Screenshots/ss-"$(date +'%Y-%m-%d_%H-%M-%S')".png && bash -c "/home/rye/progaming/xenos_git/img-dump/lmao.sh"
+    bindsym $mod+Print exec sh -c 'notify-send "Starting screenshot"; grim -g "$(slurp)" /home/rye/Pictures/Screenshots/ss-"$(date +"%Y-%m-%d_%H-%M-%S")".png && bash -c "cd /home/rye/progaming/xenos_git/img-dump/ && ./lmao.sh"; notify-send "Screenshot done"'
+#   bindsym $mod+Print exec grim -g "$(slurp)" /home/rye/Pictures/Screenshots/ss-"$(date +"%Y-%m-%d_%H-%M-%S")".png && sh "/home/rye/progaming/xenos_git/img-dump/lmao.sh"
     # playerctl keys because these fucking wm people don't write it in themself
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioPause exec playerctl play-pause
