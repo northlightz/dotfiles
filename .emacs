@@ -17,7 +17,8 @@
  '(custom-enabled-themes '(doric-plum))
  '(custom-safe-themes
    '("e28349a8b41daed8ce67839a22a9d45bb53f2adfc1452c64b6d80b4d3859c132"
-     default)))
+     default))
+ '(package-selected-packages '(comment-tags company doric-themes magit transient)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
