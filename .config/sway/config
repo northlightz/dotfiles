@@ -4,37 +4,14 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+# vars
 set $mod Mod4
-# Home row direction keys, like vim
-# set $left h
-# set $down j
-# set $up k
-# set $right l
-# Your preferred terminal emulator
 set $term kitty --single-instance
-# Your preferred application launcher
 set $menu rofi -show combi -combi-modi window#drun#run#emoji -modi combi#emoji
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
 output eDP-1 resolution 1920x1080 position 1920,0 
 output HDMI-A-1 resolution 1920x1080 position 0,0 
 
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -44,25 +21,12 @@ output HDMI-A-1 resolution 1920x1080 position 0,0
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input type:touchpad {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
 input type:keyboard {
       xkb_layout "us,ir,ru"
       xkb_variant ",winkeys,phonetic"
       xkb_options "grp:win_space_toggle,compose:ralt"
 }
 #
-# You can also configure each device individually.
-# Read `man 5 sway-input` for more information about this section.
  
 ### Key bindings
 #
@@ -77,11 +41,6 @@ input type:keyboard {
     # Start your launcher
     bindsym $mod+D exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
 
     # Reload the configuration file
@@ -215,13 +174,13 @@ input type:keyboard {
 #     }
 # }
 
-exec waybar
-exec waypaper --restore
-exec copyq --start-server
-exec swaync
-exec nm-applet
-exec blueman-applet
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec waybar &
+exec waypaper --restore &
+exec copyq --start-server &
+exec swaync &
+exec nm-applet &
+exec blueman-applet &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 default_border normal 0
 
 include /etc/sway/config.d/*
