@@ -1,9 +1,0 @@
-[window]
-opacity=0.8
-
-[font]
-normal={family="Iosevka Fixed", style="Regular"}
-bold={family="Iosevka Fixed", style="Bold"}
-italic={family="Iosevka Fixed", style="Italic"}
-bold_italic={family="Iosevka Fixed", style="Bold Italic"}
-size=12
