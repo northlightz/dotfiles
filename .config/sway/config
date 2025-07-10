@@ -21,10 +21,16 @@ output HDMI-A-1 resolution 1920x1080 position 0,0
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-input type:keyboard {
-      xkb_layout "us,ir,ru"
-      xkb_variant ",winkeys,phonetic"
-      xkb_options "grp:win_space_toggle,compose:ralt"
+# IBus uses Super-space to show the IME switcher popup.
+bindsym $mod+Shift+backslash floating toggle
+
+bindsym $mod+backslash focus mode_toggle
+
+
+input * {
+  xkb_layout "us"
+  xkb_variant ","
+  xkb_options "compose:rctrl"
 }
 #
  
@@ -50,23 +56,11 @@ input type:keyboard {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
-#
-    # Move your focus around
-    # bindsym $mod+$left focus left
-    # bindsym $mod+$down focus down
-    # bindsym $mod+$up focus up
-    # bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
-    # bindsym $mod+Shift+$left move left
-    # bindsym $mod+Shift+$down move down
-    # bindsym $mod+Shift+$up move up
-    # bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -109,15 +103,11 @@ input type:keyboard {
     # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
     # bindsym $mod+space focus mode_toggle
@@ -149,38 +139,28 @@ input type:keyboard {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim & slurl. also second bind for uploading automagically to github (like imgur)
     bindsym Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png' 
-    bindsym $mod+Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png && sh "/home/rye/gitclones/img-dump/lmao.sh"'
-    #bindsym $mod+Print exec grim -g "$(slurp)" /home/rye/Pictures/Screenshots/ss-"$(date +"%Y-%m-%d_%H-%M-%S")".png && sh "/home/rye/progaming/xenos_git/img-dump/lmao.sh"
-    # playerctl keys because these fucking wm people don't write it in themself
+    bindsym $mod+Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png && sh "cd /home/rye/gitclones/img-dump/" && sh "/home/rye/gitclones/img-dump/lmao.sh"'
+
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioPause exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
 #
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-# 
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
 
-exec waybar &
+bar {
+  swaybar_command waybar
+}
+
 exec swww-daemon &
 exec copyq --start-server &
 exec swaync &
 exec nm-applet &
 exec blueman-applet &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+exec_always ibus start --type wayland
+
 gaps inner 10
 blur enable
 default_border normal 0

@@ -4,6 +4,6 @@ function fish_greeting
 end
 
 
-alias vim=nvim
-alias cat=bat
-alias rmf=rm -rf
+alias vim="nvim"
+alias cat="bat"
+alias rmf="rm -rf"
