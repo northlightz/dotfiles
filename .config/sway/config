@@ -139,7 +139,7 @@ input * {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim & slurl. also second bind for uploading automagically to github (like imgur)
     bindsym Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png' 
-    bindsym $mod+Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png && sh "cd /home/rye/gitclones/img-dump/" && sh "/home/rye/gitclones/img-dump/lmao.sh"'
+    bindsym $mod+Print exec sh -c '/usr/share/sway-contrib/grimshot savecopy area /home/rye/Pictures/Screenshots/ss-"$(date +"%y-%m-%d_%h-%m-%s")".png && sh -c "cd /home/rye/gitclones/img-dump/" && sh "/home/rye/gitclones/img-dump/lmao.sh"'
 
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioPause exec playerctl play-pause
